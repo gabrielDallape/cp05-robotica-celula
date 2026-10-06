@@ -5,10 +5,11 @@ section{width:1920px;height:1080px;position:relative;overflow:hidden}
 section *{margin:0;box-sizing:border-box}ul,ol{padding-left:1.2em}
 table{border-collapse:collapse;width:100%}th,td{padding:0.35em 0.6em;border-bottom:1px solid #cfccc2;text-align:left;vertical-align:top}th{font-weight:600}
 section{box-sizing:border-box;position:absolute;left:0;top:0;transform-origin:0 0;display:none}
-section.ativo{display:flex}
+section:not(.ativo){display:none !important}
 #barra{position:fixed;left:0;right:0;bottom:0;height:52px;display:flex;align-items:center;gap:16px;padding:0 16px;background:#15171cee;font-size:15px;z-index:9}
 #barra button{background:#2a2d35;color:#f2f0ea;border:0;border-radius:6px;padding:8px 14px;font-size:15px;cursor:pointer}
 #barra a{color:#f2a93b} #num{min-width:70px;text-align:center} .esp{flex:1}
+@media (max-width:600px){#barra{gap:9px;padding:0 8px;font-size:12px}#barra button{padding:6px 10px}#num{min-width:44px}.esp{display:none}}
 </style></head><body>
 <section id="cover" data-transition="fade" style="background:#15171c;color:#f2f0ea;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
 <div style="position:absolute;left:0;top:0;width:24px;height:1080px;background:#ed145b"></div>
