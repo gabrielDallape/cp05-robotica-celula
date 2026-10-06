@@ -1,0 +1,383 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CP05 · Robotização do painel</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400..700&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>html,body{margin:0;height:100%;background:#0d0e11;font-family:'IBM Plex Sans',Arial,sans-serif;color:#f2f0ea;overflow:hidden}
+section{width:1920px;height:1080px;position:relative;overflow:hidden}
+section *{margin:0;box-sizing:border-box}ul,ol{padding-left:1.2em}
+table{border-collapse:collapse;width:100%}th,td{padding:0.35em 0.6em;border-bottom:1px solid #cfccc2;text-align:left;vertical-align:top}th{font-weight:600}
+section{box-sizing:border-box;position:absolute;left:0;top:0;transform-origin:0 0;display:none}
+section.ativo{display:flex}
+#barra{position:fixed;left:0;right:0;bottom:0;height:52px;display:flex;align-items:center;gap:16px;padding:0 16px;background:#15171cee;font-size:15px;z-index:9}
+#barra button{background:#2a2d35;color:#f2f0ea;border:0;border-radius:6px;padding:8px 14px;font-size:15px;cursor:pointer}
+#barra a{color:#f2a93b} #num{min-width:70px;text-align:center} .esp{flex:1}
+</style></head><body>
+<section id="cover" data-transition="fade" style="background:#15171c;color:#f2f0ea;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="position:absolute;left:0;top:0;width:24px;height:1080px;background:#ed145b"></div>
+<p style="font-size:28px;letter-spacing:4px;text-transform:uppercase;color:#f2a93b">FIAP · CP05 · Case Extension Dash</p>
+<div style="display:flex;flex-direction:column;gap:32px">
+<h1 style="font-family:'Oswald', Arial, sans-serif;font-size:140px;font-weight:600;line-height:1.0;text-transform:uppercase">Robotização do acabamento<br>do painel automotivo</h1>
+<p style="font-size:40px;color:#b9bcc4;width:1300px">Um robô faz a tupiagem e aplica cola + borracha nos dois lados da peça, com gabarito basculante</p>
+</div>
+<p style="font-size:28px;color:#b9bcc4">[Nome(s) do grupo] · [RM] · 06/10/2026</p>
+
+</section>
+<section id="atual" data-transition="fade" style="background:#f2f0ea;color:#15171c;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;letter-spacing:4px;text-transform:uppercase;color:#c8104f">Processo atual</p>
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Hoje, três pessoas terminam a peça à mão</h2>
+</div>
+<div style="display:flex;align-items:stretch;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#e2dfd6;padding:32px;border-radius:12px;border-top:8px solid #8a8f99">
+<p style="font-size:24px;letter-spacing:2px;color:#4a4f5a">AUTOMÁTICO</p>
+<h3 style="font-size:36px;font-weight:600">Injetora</h3>
+<p style="font-size:26px;color:#4a4f5a">Injeta o painel em plástico</p>
+</div>
+<div style="width:40px;height:24px;background:#8a8f99;align-self:center;flex:none;clip-path:polygon(0 25%,60% 25%,60% 0,100% 50%,60% 100%,60% 75%,0 75%)"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#e2dfd6;padding:32px;border-radius:12px;border-top:8px solid #8a8f99">
+<p style="font-size:24px;letter-spacing:2px;color:#4a4f5a">AUTOMÁTICO</p>
+<h3 style="font-size:36px;font-weight:600">Cartesiano</h3>
+<p style="font-size:26px;color:#4a4f5a">Tira a peça com ventosas e solta na esteira</p>
+</div>
+<div style="width:40px;height:24px;background:#8a8f99;align-self:center;flex:none;clip-path:polygon(0 25%,60% 25%,60% 0,100% 50%,60% 100%,60% 75%,0 75%)"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#ffffff;padding:32px;border-radius:12px;border-top:8px solid #c8104f">
+<p style="font-size:24px;letter-spacing:2px;color:#c8104f">MANUAL · OP 1</p>
+<h3 style="font-size:36px;font-weight:600">Rebarba</h3>
+<p style="font-size:26px;color:#4a4f5a">Corta o excesso de injeção com estilete</p>
+</div>
+<div style="width:40px;height:24px;background:#c8104f;align-self:center;flex:none;clip-path:polygon(0 25%,60% 25%,60% 0,100% 50%,60% 100%,60% 75%,0 75%)"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#ffffff;padding:32px;border-radius:12px;border-top:8px solid #c8104f">
+<p style="font-size:24px;letter-spacing:2px;color:#c8104f">MANUAL · OP 2</p>
+<h3 style="font-size:36px;font-weight:600">Cola</h3>
+<p style="font-size:26px;color:#4a4f5a">Passa o adesivo no canal de vedação</p>
+</div>
+<div style="width:40px;height:24px;background:#c8104f;align-self:center;flex:none;clip-path:polygon(0 25%,60% 25%,60% 0,100% 50%,60% 100%,60% 75%,0 75%)"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#ffffff;padding:32px;border-radius:12px;border-top:8px solid #c8104f">
+<p style="font-size:24px;letter-spacing:2px;color:#c8104f">MANUAL · OP 3</p>
+<h3 style="font-size:36px;font-weight:600">Vedação</h3>
+<p style="font-size:26px;color:#4a4f5a">Assenta a borracha no canal, à mão</p>
+</div>
+</div>
+<p style="font-size:32px;color:#4a4f5a;width:1400px">A injetora e o cartesiano já são automáticos. O gargalo está depois da esteira: as três etapas de acabamento dependem de gente.</p>
+
+</section>
+<section id="problemas" data-transition="fade" style="background:#f2f0ea;color:#15171c;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;letter-spacing:4px;text-transform:uppercase;color:#c8104f">1 · Problemas e pontos críticos</p>
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">O que dá errado quando o acabamento é manual</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:12px;background:#ffffff;padding:36px;border-radius:12px">
+<div style="width:48px;height:48px;color:#c8104f;flex:none;border-radius:50%;border:5px solid currentColor"></div>
+<h3 style="font-size:34px;font-weight:600">Risco de corte</h3>
+<p style="font-size:26px;color:#4a4f5a;line-height:1.35">Estilete o turno inteiro, perto de peça quente que acabou de sair da injetora</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#ffffff;padding:36px;border-radius:12px">
+<div style="width:48px;height:48px;color:#c8104f;flex:none;border-radius:50%;border:5px solid currentColor"></div>
+<h3 style="font-size:34px;font-weight:600">Ergonomia</h3>
+<p style="font-size:26px;color:#4a4f5a;line-height:1.35">Movimento repetitivo e postura curvada sobre a esteira: risco de LER/DORT e afastamento</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#ffffff;padding:36px;border-radius:12px">
+<div style="width:48px;height:48px;color:#c8104f;flex:none;border-radius:50%;border:5px solid currentColor"></div>
+<h3 style="font-size:34px;font-weight:600">Exposição química</h3>
+<p style="font-size:26px;color:#4a4f5a;line-height:1.35">Contato com adesivo e solvente (vapores), exige EPI e controle constante</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#ffffff;padding:36px;border-radius:12px">
+<div style="width:48px;height:48px;color:#c8104f;flex:none;border-radius:50%;border:5px solid currentColor"></div>
+<h3 style="font-size:34px;font-weight:600">Qualidade variável</h3>
+<p style="font-size:26px;color:#4a4f5a;line-height:1.35">Rebarba mal tirada, cordão de cola irregular e borracha torta viram ruído e vazamento no carro</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#ffffff;padding:36px;border-radius:12px">
+<div style="width:48px;height:48px;color:#c8104f;flex:none;border-radius:50%;border:5px solid currentColor"></div>
+<h3 style="font-size:34px;font-weight:600">Ritmo limitado</h3>
+<p style="font-size:26px;color:#4a4f5a;line-height:1.35">A injetora espera o operador mais lento; cansaço, pausas e troca de turno derrubam o ritmo</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#ffffff;padding:36px;border-radius:12px">
+<div style="width:48px;height:48px;color:#c8104f;flex:none;border-radius:50%;border:5px solid currentColor"></div>
+<h3 style="font-size:34px;font-weight:600">Sem rastreabilidade</h3>
+<p style="font-size:26px;color:#4a4f5a;line-height:1.35">Não fica registro de quanta cola foi aplicada nem de onde a borracha ficou em cada peça</p>
+</div>
+</div>
+
+</section>
+<section id="necessidade" data-transition="fade" style="background:#c8104f;color:#fbf3f5;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
+<p style="font-size:28px;letter-spacing:4px;text-transform:uppercase;color:#ffe3ea">Por que robotizar</p>
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:96px;font-weight:600;line-height:1.08;width:1600px">São três tarefas repetitivas, perigosas e que precisam de precisão. É exatamente o tipo de trabalho que um robô faz melhor.</h2>
+<div style="display:flex;gap:48px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;border-top:2px solid #ffc2d2;padding:24px 0 0 0">
+<p style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600">9 → 3</p>
+<p style="font-size:28px;color:#ffe3ea">operadores na linha (3 turnos)</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;border-top:2px solid #ffc2d2;padding:24px 0 0 0">
+<p style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600">0</p>
+<p style="font-size:28px;color:#ffe3ea">pessoas com estilete ou cola na mão</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;border-top:2px solid #ffc2d2;padding:24px 0 0 0">
+<p style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600">1 robô</p>
+<p style="font-size:28px;color:#ffe3ea">faz as 3 tarefas, nos 2 lados da peça</p>
+</div>
+</div>
+
+</section>
+<section id="rascunho" data-transition="fade" style="background:#15171c;color:#f2f0ea;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;letter-spacing:4px;text-transform:uppercase;color:#f2a93b">3 · Rascunho do processo robotizado</p>
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Um robô, um gabarito que gira e uma esteira</h2>
+</div>
+<div style="display:flex;align-items:stretch;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#2a2d35;padding:28px;border-radius:12px;border-top:8px solid #8a8f99">
+<p style="font-size:24px;letter-spacing:2px;color:#b9bcc4">1 · JÁ EXISTE</p>
+<h3 style="font-size:32px;font-weight:600">Cartesiano</h3>
+<p style="font-size:24px;color:#c9ccd3;line-height:1.35">Tira a peça da injetora e entrega direto no gabarito</p>
+</div>
+<div style="width:40px;height:24px;background:#8a8f99;align-self:center;flex:none;clip-path:polygon(0 25%,60% 25%,60% 0,100% 50%,60% 100%,60% 75%,0 75%)"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#2a2d35;padding:28px;border-radius:12px;border-top:8px solid #f2a93b">
+<p style="font-size:24px;letter-spacing:2px;color:#f2a93b">2 · GABARITO</p>
+<h3 style="font-size:32px;font-weight:600">Prende e gira</h3>
+<p style="font-size:24px;color:#c9ccd3;line-height:1.35">Grampos pneumáticos; servo gira 180° para expor o outro lado</p>
+</div>
+<div style="width:40px;height:24px;background:#8a8f99;align-self:center;flex:none;clip-path:polygon(0 25%,60% 25%,60% 0,100% 50%,60% 100%,60% 75%,0 75%)"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#2a2d35;padding:28px;border-radius:12px;border-top:8px solid #ed145b">
+<p style="font-size:24px;letter-spacing:2px;color:#ff6f98">3 · ROBÔ</p>
+<h3 style="font-size:32px;font-weight:600">Tupia A e B</h3>
+<p style="font-size:24px;color:#c9ccd3;line-height:1.35">Fresa flutuante tira a rebarba no contorno, dos dois lados</p>
+</div>
+<div style="width:40px;height:24px;background:#8a8f99;align-self:center;flex:none;clip-path:polygon(0 25%,60% 25%,60% 0,100% 50%,60% 100%,60% 75%,0 75%)"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#2a2d35;padding:28px;border-radius:12px;border-top:8px solid #ed145b">
+<p style="font-size:24px;letter-spacing:2px;color:#ff6f98">4 · ROBÔ</p>
+<h3 style="font-size:32px;font-weight:600">Cola + borracha</h3>
+<p style="font-size:24px;color:#c9ccd3;line-height:1.35">Troca de ferramenta; bico aplica cola e o rolete assenta o perfil, lado B e A</p>
+</div>
+<div style="width:40px;height:24px;background:#8a8f99;align-self:center;flex:none;clip-path:polygon(0 25%,60% 25%,60% 0,100% 50%,60% 100%,60% 75%,0 75%)"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#2a2d35;padding:28px;border-radius:12px;border-top:8px solid #f2a93b">
+<p style="font-size:24px;letter-spacing:2px;color:#f2a93b">5 · SAÍDA</p>
+<h3 style="font-size:32px;font-weight:600">Bascula</h3>
+<p style="font-size:24px;color:#c9ccd3;line-height:1.35">Gabarito inclina, a peça desce pela calha e a esteira leva</p>
+</div>
+</div>
+<p style="font-size:30px;color:#c9ccd3;width:1600px">O cartesiano quase não muda: só entrega no gabarito. Quem vira a peça é o gabarito, não o robô. Ciclo simulado de cerca de 80 s, compatível com o ciclo de injeção de um painel.</p>
+
+</section>
+<section id="est1" data-transition="fade" style="background:#f2f0ea;color:#15171c;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;letter-spacing:4px;text-transform:uppercase;color:#c8104f">O robô e as ferramentas</p>
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Um braço de 6 eixos, duas ferramentas</h2>
+</div>
+<table style="font-size:26px;color:#15171c">
+<tr><th style="width:22%">Escolha</th><th style="width:34%">O quê</th><th style="width:44%">Por quê</th></tr>
+<tr><td>Robô</td><td>Articulado 6 eixos, ~10 kg, ~1,3 m de alcance, em pedestal (UR10 no simulador)</td><td>Tamanho de uma pessoa; segue o contorno 3D com a ferramenta sempre perpendicular à borda</td></tr>
+<tr style="background:#e8e5dc"><td>Tupia</td><td>Spindle pneumático com flutuação radial + fresa</td><td>A flutuação compensa a variação da rebarba sem controle de força</td></tr>
+<tr><td>Cabeçote de vedação</td><td>Válvula + bico de cola, rolete de pressão e faca pneumática</td><td>Cola e borracha no mesmo passe; o rolete vem 6 cm atrás do bico</td></tr>
+<tr style="background:#e8e5dc"><td>Troca</td><td>Trocador automático no punho + suporte com duas posições</td><td>Um robô só faz as três tarefas; troca leva poucos segundos</td></tr>
+</table>
+
+</section>
+<section id="est2" data-transition="fade" style="background:#f2f0ea;color:#15171c;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;letter-spacing:4px;text-transform:uppercase;color:#c8104f">Gabarito basculante</p>
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">A peça gira, o robô não precisa dar a volta</h2>
+</div>
+<div style="display:flex;gap:48px">
+<div style="flex:3;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px;border-left:6px solid #c8104f;padding:4px 0 4px 28px">
+<h3 style="font-size:34px;font-weight:600">Quadro com eixo no centro da peça</h3>
+<p style="font-size:28px;color:#4a4f5a;line-height:1.35">Quatro grampos pneumáticos seguram a peça pelas bordas, deixando as duas faces livres.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;border-left:6px solid #c8104f;padding:4px 0 4px 28px">
+<h3 style="font-size:34px;font-weight:600">Servomotor gira 180°</h3>
+<p style="font-size:28px;color:#4a4f5a;line-height:1.35">O lado B fica na mesma altura do lado A, então o robô usa o mesmo programa nas duas faces.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;border-left:6px solid #c8104f;padding:4px 0 4px 28px">
+<h3 style="font-size:34px;font-weight:600">Bascula para descarregar</h3>
+<p style="font-size:28px;color:#4a4f5a;line-height:1.35">No fim, o quadro inclina, os grampos abrem e a peça desce pela calha até a esteira.</p>
+</div>
+</div>
+<div style="flex:2;display:flex;flex-direction:column;gap:16px;background:#15171c;color:#f2f0ea;padding:40px;border-radius:12px">
+<p style="font-size:24px;letter-spacing:2px;color:#f2a93b">POR QUE ASSIM</p>
+<p style="font-size:28px;color:#c9ccd3;line-height:1.35">O cartesiano continua fazendo só o que já faz: entregar a peça.</p>
+<p style="font-size:28px;color:#c9ccd3;line-height:1.35">Sem gabarito, o robô teria que soltar e pegar a peça de novo para virar, o que gasta tempo e exige uma garra extra.</p>
+</div>
+</div>
+
+</section>
+<section id="sensores" data-transition="fade" style="background:#f2f0ea;color:#15171c;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;letter-spacing:4px;text-transform:uppercase;color:#c8104f">Sensores, atuadores e recursos</p>
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">O que a célula sente e o que ela move</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#ffffff;padding:40px;border-radius:12px;border-top:8px solid #c8104f">
+<h3 style="font-size:36px;font-weight:600">Sensores</h3>
+<ul style="font-size:26px;color:#4a4f5a;line-height:1.45">
+<li>Indutivo de peça no gabarito</li>
+<li>Fim de curso dos grampos</li>
+<li>Encoder do servo do gabarito</li>
+<li>Presença de ferramenta no suporte</li>
+<li>Pressão, vazão e nível da cola</li>
+<li>Presença e fim do perfil</li>
+<li>Fotoelétrico no fim da esteira</li>
+</ul>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#ffffff;padding:40px;border-radius:12px;border-top:8px solid #f2a93b">
+<h3 style="font-size:36px;font-weight:600">Atuadores</h3>
+<ul style="font-size:26px;color:#4a4f5a;line-height:1.45">
+<li>Servomotor de giro do gabarito</li>
+<li>Grampos pneumáticos</li>
+<li>Trocador de ferramenta</li>
+<li>Spindle pneumático da tupia</li>
+<li>Válvula dosadora e bomba de cola</li>
+<li>Alimentador de perfil e faca</li>
+<li>Motor da esteira</li>
+</ul>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#ffffff;padding:40px;border-radius:12px;border-top:8px solid #8a8f99">
+<h3 style="font-size:36px;font-weight:600">Outros recursos</h3>
+<ul style="font-size:26px;color:#4a4f5a;line-height:1.45">
+<li>Gabarito basculante</li>
+<li>Suporte de ferramentas</li>
+<li>Pedestal do robô</li>
+<li>Calha + esteira de saída</li>
+<li>Tambor de cola com bomba</li>
+<li>Rolo duplo de borracha</li>
+<li>CLP + IHM da célula</li>
+</ul>
+</div>
+</div>
+
+</section>
+<section id="seguranca" data-transition="fade" style="background:#15171c;color:#f2f0ea;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;letter-spacing:4px;text-transform:uppercase;color:#f2a93b">Segurança · NR-12 e ISO 10218</p>
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Ninguém entra na célula com robô em movimento</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="display:flex;gap:28px;align-items:start">
+<div style="width:56px;height:56px;color:#f2a93b;flex:none;border-radius:50%;border:5px solid currentColor"></div>
+<div style="display:flex;flex-direction:column;gap:8px"><h3 style="font-size:34px;font-weight:600">Grade perimetral</h3><p style="font-size:28px;color:#c9ccd3">Tela metálica de 2 m e portas com intertravamento</p></div>
+</div>
+<div style="display:flex;gap:28px;align-items:start">
+<div style="width:56px;height:56px;color:#f2a93b;flex:none;border-radius:50%;border:5px solid currentColor"></div>
+<div style="display:flex;flex-direction:column;gap:8px"><h3 style="font-size:34px;font-weight:600">Cortinas de luz</h3><p style="font-size:28px;color:#c9ccd3">Na abertura por onde a esteira sai da célula</p></div>
+</div>
+<div style="display:flex;gap:28px;align-items:start">
+<div style="width:56px;height:56px;color:#f2a93b;flex:none;border-radius:50%;border:5px solid currentColor"></div>
+<div style="display:flex;flex-direction:column;gap:8px"><h3 style="font-size:34px;font-weight:600">Scanner de área</h3><p style="font-size:28px;color:#c9ccd3">Reduz a velocidade quando alguém se aproxima do posto de abastecimento</p></div>
+</div>
+<div style="display:flex;gap:28px;align-items:start">
+<div style="width:56px;height:56px;color:#f2a93b;flex:none;border-radius:50%;border:5px solid currentColor"></div>
+<div style="display:flex;flex-direction:column;gap:8px"><h3 style="font-size:34px;font-weight:600">Emergência</h3><p style="font-size:28px;color:#c9ccd3">Botoeiras em cada lado e na IHM, com relé de segurança</p></div>
+</div>
+</div>
+<p style="font-size:28px;color:#c9ccd3;width:1500px">A entrada da peça é por cima, pelo cartesiano da injetora. O abastecimento de cola e de rolo de borracha fica fora da grade, então dá para reabastecer sem parar a célula.</p>
+
+</section>
+<section id="custos" data-transition="fade" style="background:#f2f0ea;color:#15171c;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;letter-spacing:4px;text-transform:uppercase;color:#c8104f">4 · Custos do projeto</p>
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Investimento estimado: R$ 1,09 milhão</h2>
+</div>
+<table style="font-size:26px;color:#15171c">
+<tr><th style="width:74%">Item</th><th style="width:26%;text-align:right">R$</th></tr>
+<tr><td>Robô 6 eixos com controlador (~US$ 45 mil)</td><td style="text-align:right">243.000</td></tr>
+<tr style="background:#e8e5dc"><td>Sistema de cola: bomba de tambor, válvula dosadora, controlador</td><td style="text-align:right">140.000</td></tr>
+<tr><td>Gabarito basculante: servo, redutor, quadro e grampos</td><td style="text-align:right">120.000</td></tr>
+<tr style="background:#e8e5dc"><td>Cabeçote de vedação + suporte de rolo duplo com emenda</td><td style="text-align:right">110.000</td></tr>
+<tr><td>Tupia flutuante, trocador de ferramenta, aspiração</td><td style="text-align:right">70.000</td></tr>
+<tr style="background:#e8e5dc"><td>Segurança: grade, porta, cortina de luz, scanner</td><td style="text-align:right">70.000</td></tr>
+<tr><td>Esteira de saída e calha</td><td style="text-align:right">40.000</td></tr>
+<tr style="background:#e8e5dc"><td>CLP, IHM e painel elétrico</td><td style="text-align:right">60.000</td></tr>
+<tr><td>Engenharia, programação, instalação e treinamento</td><td style="text-align:right">235.000</td></tr>
+</table>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6a6f79">Câmbio assumido US$ 1 = R$ 5,40. Braço colaborativo de US$ 25–60 mil e sistema implantado de US$ 40–150 mil (EVS, 2026).</p>
+
+</section>
+<section id="payback" data-transition="fade" style="background:#f2f0ea;color:#15171c;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;letter-spacing:4px;text-transform:uppercase;color:#c8104f">4 · Manual × robotizado e payback</p>
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">O investimento se paga em cerca de 2 anos</h2>
+</div>
+<div style="display:flex;gap:64px">
+<div style="width:700px;display:flex;flex-direction:column;gap:28px">
+<table style="font-size:26px;color:#15171c">
+<tr><th style="width:40%">Custo por ano</th><th style="width:30%;text-align:right">Manual</th><th style="width:30%;text-align:right">Robô</th></tr>
+<tr><td>Operadores</td><td style="text-align:right">486 mil</td><td style="text-align:right">162 mil</td></tr>
+<tr style="background:#e8e5dc"><td>Manutenção</td><td style="text-align:right">—</td><td style="text-align:right">54 mil</td></tr>
+<tr><td>Refugo</td><td style="text-align:right">403 mil</td><td style="text-align:right">134 mil</td></tr>
+<tr style="background:#e8e5dc"><td><b>Total</b></td><td style="text-align:right"><b>889 mil</b></td><td style="text-align:right"><b>350 mil</b></td></tr>
+</table>
+<p style="font-size:30px;line-height:1.35">Economia de <b>R$ 539 mil por ano</b>. Payback = 1.088 ÷ 539 ≈ <b>2,0 anos</b>.</p>
+<p style="font-size:24px;color:#6a6f79;line-height:1.4">Premissas: 3 turnos, 3 op./turno hoje e 1 depois, R$ 4.500/mês por operador com encargos e benefícios (base salario.com.br), 28 mil peças/mês, refugo de 1,5% para 0,5%, R$ 80 por peça, manutenção de 5% do investimento ao ano.</p>
+</div>
+<div style="position:relative;width:900px;height:620px">
+<svg aria-label="Caixa acumulado do ano 0 ao 5: -1088, -549, -10, +529, +1068, +1607 mil reais" width="900" height="620" viewBox="0 0 900 620" style="position:absolute;left:0px;top:0px;width:900px;height:620px">
+<line x1="0" y1="290" x2="900" y2="290" stroke="#8a8f99" stroke-width="2"/>
+<rect x="30" y="290" width="90" height="163" fill="#c8104f"/>
+<rect x="175" y="290" width="90" height="82" fill="#c8104f"/>
+<rect x="320" y="290" width="90" height="3" fill="#c8104f"/>
+<rect x="465" y="211" width="90" height="79" fill="#1f6f8b"/>
+<rect x="610" y="130" width="90" height="160" fill="#1f6f8b"/>
+<rect x="755" y="49" width="90" height="241" fill="#1f6f8b"/>
+</svg>
+<p style="position:absolute;left:5px;top:461px;width:140px;font-size:24px;text-align:center;color:#c8104f">−1.088</p>
+<p style="position:absolute;left:150px;top:380px;width:140px;font-size:24px;text-align:center;color:#c8104f">−549</p>
+<p style="position:absolute;left:295px;top:301px;width:140px;font-size:24px;text-align:center;color:#c8104f">−10</p>
+<p style="position:absolute;left:440px;top:167px;width:140px;font-size:24px;text-align:center;color:#1f6f8b">+529</p>
+<p style="position:absolute;left:585px;top:86px;width:140px;font-size:24px;text-align:center;color:#1f6f8b">+1.068</p>
+<p style="position:absolute;left:730px;top:5px;width:140px;font-size:24px;text-align:center;color:#1f6f8b">+1.607</p>
+<p style="position:absolute;left:5px;top:584px;width:890px;font-size:24px;color:#4a4f5a">Ano 0 · 1 · 2 · 3 · 4 · 5  —  caixa acumulado em R$ mil</p>
+</div>
+</div>
+
+</section>
+<section id="cena3d" data-transition="fade" style="background:#15171c;color:#f2f0ea;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;letter-spacing:4px;text-transform:uppercase;color:#f2a93b">5 · A célula no CoppeliaSim</p>
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Do rascunho para a cena 3D animada</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="position:relative;width:1100px;height:619px">
+<img src="imagens/v2_geral.png" alt="Vista geral da célula" style="position:absolute;left:0px;top:0px;width:1100px;height:619px;object-fit:cover;border-radius:12px">
+<p style="position:absolute;left:24px;top:555px;width:700px;font-size:24px;background:#15171c;color:#f2f0ea;padding:8px 16px;border-radius:8px">Vista geral: robô, gabarito, esteira, grade e utilidades</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:21px">
+<div style="position:relative;width:532px;height:299px">
+<img src="imagens/v2_2_giro.png" alt="Gabarito girando 180 graus com a peça presa" style="position:absolute;left:0px;top:0px;width:532px;height:299px;object-fit:cover;border-radius:12px">
+<p style="position:absolute;left:16px;top:243px;width:400px;font-size:24px;background:#15171c;color:#f2f0ea;padding:6px 14px;border-radius:8px">Gabarito girando 180°</p>
+</div>
+<div style="position:relative;width:532px;height:299px">
+<img src="imagens/v2_5_cola_B.png" alt="Robô aplicando cola e borracha" style="position:absolute;left:0px;top:0px;width:532px;height:299px;object-fit:cover;border-radius:12px">
+<p style="position:absolute;left:16px;top:243px;width:400px;font-size:24px;background:#15171c;color:#f2f0ea;padding:6px 14px;border-radius:8px">Cola + borracha (lado B)</p>
+</div>
+</div>
+</div>
+</section>
+<section id="demo" data-transition="fade" style="background:#15171c;color:#f2f0ea;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;letter-spacing:4px;text-transform:uppercase;color:#f2a93b">5 · Proposta no CoppeliaSim</p>
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:72px;font-weight:600;line-height:1.1">Roteiro da demonstração 3D (~80 s por peça)</h2>
+</div>
+<ol style="font-size:32px;line-height:1.55;color:#e4e5e9;width:1600px">
+<li>Cena parada: robô, gabarito, suporte de ferramentas, esteira e grade</li>
+<li>Peça chega do cartesiano e os grampos fecham (ficam verdes)</li>
+<li>Robô pega a tupia e tira a rebarba do lado A</li>
+<li>Gabarito gira 180° e o robô tira a rebarba do lado B</li>
+<li>Troca para o cabeçote: cola + borracha no lado B, gira, lado A</li>
+<li>Gabarito bascula, a peça desce pela calha e a esteira leva</li>
+<li>Painel do CLP: etapa, ferramenta, face, cola e rolos</li>
+</ol>
+</section>
+<section id="fim" data-transition="fade" style="background:#c8104f;color:#fbf3f5;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<h2 style="font-family:'Oswald', Arial, sans-serif;font-size:120px;font-weight:600;line-height:1.05;text-transform:uppercase">Menos risco, mais qualidade,<br>payback em ~2 anos</h2>
+<p style="font-size:36px;color:#ffe3ea">Obrigado · perguntas?</p>
+
+</section>
+
+<div id="barra"><button id="ant" aria-label="Slide anterior">‹</button><span id="num"></span><button id="prox" aria-label="Próximo slide">›</button>
+<span class="esp"></span><a href="CP05_Apresentacao.pdf">PDF</a><a href="coppeliasim/celula_cp05_v2.ttt" download>Cena .ttt</a><a href="coppeliasim/celula_cp05_v2.ttm" download>Modelo .ttm</a><a href="https://github.com/gabrielDallape/cp05-robotica-celula">Código</a></div>
+<script>
+const S=[...document.querySelectorAll('section')];let i=0;
+function fit(){const w=innerWidth,h=innerHeight-52,k=Math.min(w/1920,h/1080);S.forEach(s=>{s.style.transform=`translate(${(w-1920*k)/2}px,${(h-1080*k)/2}px) scale(${k})`})}
+function ir(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,j)=>s.classList.toggle('ativo',j===i));document.getElementById('num').textContent=(i+1)+' / '+S.length;try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+document.getElementById('ant').onclick=()=>ir(i-1);document.getElementById('prox').onclick=()=>ir(i+1);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))ir(i+1);if(['ArrowLeft','PageUp'].includes(e.key))ir(i-1)});
+let x0=null;addEventListener('touchstart',e=>x0=e.touches[0].clientX);addEventListener('touchend',e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>40)ir(i+(d<0?1:-1));x0=null});
+addEventListener('resize',fit);fit();ir((parseInt(location.hash.slice(1))||1)-1);
+</script></body></html>
